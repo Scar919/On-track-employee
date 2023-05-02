@@ -3,7 +3,7 @@
 # Description
 The motivation behind this project was to allow a company to easily access and track employees within the command line without needing to navigate through several different locations. Through the command line employees could easily see employee roles, departments, salaries, and managers. Roles and departments can also be added or updated through the command line. 
 
-![WalkthoughVid](https://drive.google.com/file/d/1acNF70-UyIZL4xZO-slEFQkHWlisYpqH/view)
+[WalkthoughVid](https://drive.google.com/file/d/1acNF70-UyIZL4xZO-slEFQkHWlisYpqH/view)
 ![IMG](./assets/IMG.png)
 
 # Installation
