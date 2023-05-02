@@ -17,11 +17,13 @@ CREATE TABLE employee (
     last_name VARCHAR(50) NOT NULL,
     role_id INT,
     manager_id INT
+    FOREIGN KEY (role_id) REFERENCES employee (id)
 );
 
 CREATE TABLE roles (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(50) NOT NULL,
     salary DECIMAL NOT NULL,
-    department_id INT
+    department_id INT NOT NULL,
+    FOREIGN KEY (department_id) REFERENCES department (id)
 );

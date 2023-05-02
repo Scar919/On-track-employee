@@ -17,8 +17,8 @@ connection.connect((err => {
 
 
 const startMenu = () => {
-    inquirer.
-        prompt({
+    inquirer
+    .prompt({
         message: 'Welcome, how can I help you?',
         name:'menu',
         type: 'list',
@@ -83,7 +83,7 @@ const viewDepartment = () => {
 };
 
 const viewRole = () => {
-    connection.query('SELECT * FROM role', function (err, res) {
+    connection.query('SELECT * FROM roles', function (err, res) {
         if (err) throw err;
         console.table(res);
         startMenu();
@@ -140,7 +140,7 @@ const addRole = () => {
     ])
     .then(answer => {
         connection.query(
-            'INSERT INTO job (title, salary, department_id) VALUES (?,?,?)',
+            'INSERT INTO roles (title, salary, department_id) VALUES (?,?,?)',
             [answer.roleTitle, answer.salary, answer.deptId],
             function (err, res) {
                 if (err) throw err;
@@ -165,18 +165,18 @@ const addEmployee = () => {
         },
         {
             name: 'roleId',
-            type: 'list',
-            message:'Please enter role ID.',
+            type: 'input',
+            message:'Please enter employee role id:',
         },
         {
             name: 'managerId',
-            type: 'list',
-            message: "please enter manger name",
+            type: 'input',
+            message: "please enter manger id:",
         },
     ])
     .then(answer => {
         connection.query(
-            'INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUES (?, ?, ?)',
+            'INSERT INTO employee(first_name, last_name, role_id, manager_id) VALUES (?, ?, ?, ?)',
             [answer.firstName, answer.lastName, answer.roleId, answer.managerId],
             function (err, res) {
                 if (err) throw err;
